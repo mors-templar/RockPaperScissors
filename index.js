@@ -10,28 +10,26 @@ function getComputerChoice() {
     }
 }
 
-function getUserChoice() {
-    let uchoice = prompt("Enter your choice (rock, paper, or scissors):");
-    return uchoice;
-}
+// function getUserChoice() {
+//     let uchoice = prompt("Enter your choice (rock, paper, or scissors):");
+//     return uchoice;
+// }
 
 function playRound(uc, cc) {
     uc = uc.toLowerCase();
     cc = cc.toLowerCase();
+    let resultDisplay = document.getElementById("result-text")
 
     if (uc === cc) {
-        console.log(`It is a DRAW, both players chose ${uc}`);
-        return "draw";
+        resultDisplay.textContent = `It's a DRAW! Both chose ${uc}`
     } else if (
         (uc === "rock" && cc === "scissors") ||
         (uc === "paper" && cc === "rock") ||
         (uc === "scissors" && cc === "paper")
     ) {
-        console.log(`You WIN! ${uc} beats ${cc}`);
-        return "u";
+        resultDisplay.textContent = `You Win! ${uc} beats ${cc}`
     } else {
-        console.log(`You LOSE! ${cc} beats ${uc}`);
-        return "c";
+        resultDisplay.textContent = `You Lose! ${cc} beats ${uc}`
     }
 }
 

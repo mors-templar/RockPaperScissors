@@ -1,0 +1,50 @@
+body{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.header {
+    text-align: center;
+    padding-bottom: 2%;   
+}
+
+.Game {
+    background-color:lightgray;
+}
+
+.explaination{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 5%;
+}
+
+.Game .game-buttons {
+    display: flex;
+    background-color: lightgray;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn {
+    border-radius: 10%;
+    border-color: aqua;
+    background-color: aqua;
+}
+
+button:hover{
+    color: blueviolet;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-title {
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+}
+

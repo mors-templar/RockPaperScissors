@@ -1,9 +1,9 @@
 function getComputerChoice() {
     let x = Math.random();
 
-    if (rand < 0.33) {
+    if (x < 0.33) {
         return "rock";
-    } else if (rand < 0.66) {
+    } else if (x < 0.66) {
         return "paper";
     } else {
         return "scissors";
@@ -15,26 +15,26 @@ function getUserChoice() {
     return uchoice;
 }
 
-function playRound(hc, cc) {
-    hc = hc.toLowerCase();
+function playRound(uc, cc) {
+    uc = uc.toLowerCase();
     cc = cc.toLowerCase();
 
-    if (hc === cc) {
-        console.log(`It is a DRAW, both players chose ${hc}`);
+    if (uc === cc) {
+        console.log(`It is a DRAW, both players chose ${uc}`);
         return "draw";
     } else if (
-        (hc === "rock" && cc === "scissors") ||
-        (hc === "paper" && cc === "rock") ||
-        (hc === "scissors" && cc === "paper")
+        (uc === "rock" && cc === "scissors") ||
+        (uc === "paper" && cc === "rock") ||
+        (uc === "scissors" && cc === "paper")
     ) {
-        console.log(`You WIN! ${hc} beats ${cc}`);
+        console.log(`You WIN! ${uc} beats ${cc}`);
         return "u";
     } else {
-        console.log(`You LOSE! ${cc} beats ${hc}`);
+        console.log(`You LOSE! ${cc} beats ${uc}`);
         return "c";
     }
 }
 
-
-
-playGame();
+document.getElementById("rock").addEventListener("click", () => playRound("rock", getComputerChoice()));
+document.getElementById("paper").addEventListener("click", () => playRound("paper", getComputerChoice()));
+document.getElementById("scissors").addEventListener("click", () => playRound("scissors", getComputerChoice()));
